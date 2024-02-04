@@ -1,7 +1,7 @@
-﻿# react
-npm install
-npm run dev
+﻿# react <br />
+npm install <br />
+npm run dev <br />
 
-vscode tools:
--Prettier
--Simple React Snippets
+vscode tools: <br />
+-Prettier <br />
+-Simple React Snippets <br />
