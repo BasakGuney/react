@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import NavBar from "./NavBar";
 
 const Form = (props: { v1: string; setV1: (v: string) => void }) => {
-  const [active, setActive] = useState("t");
+  const [domainActive, setDomainActive] = useState("not active");
+  const [ipActive, setIpActive] = useState("not active");
   return (
     <>
       <br></br>
@@ -16,14 +16,14 @@ const Form = (props: { v1: string; setV1: (v: string) => void }) => {
           <a
             type="button"
             className="btn btn-outline-dark"
-            onClick={() => setActive("take")}
+            onClick={() => setDomainActive("active")}
           >
             Update Domain
           </a>
         </div>
 
         <div className="col-auto">
-          {active === "take" && (
+          {domainActive === "active" && (
             <>
               <div className="row g-3 align-items-center">
                 <div className="col-auto">
@@ -45,7 +45,51 @@ const Form = (props: { v1: string; setV1: (v: string) => void }) => {
                     className="btn btn-primary"
                     type="submit"
                     value="Submit"
-                    onClick={() => setActive("t")}
+                    onClick={() => setDomainActive("not active")}
+                  />
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+
+      <br></br>
+      <div className="row g-3 align-items-center">
+        <div className="col-auto">
+          <a
+            type="button"
+            className="btn btn-outline-dark"
+            onClick={() => setIpActive("active")}
+          >
+            Update IP
+          </a>
+        </div>
+
+        <div className="col-auto">
+          {ipActive === "active" && (
+            <>
+              <div className="row g-3 align-items-center">
+                <div className="col-auto">
+                  <label htmlFor="inputPassword6" className="col-form-label">
+                    IP:
+                  </label>
+                </div>
+                <div className="col-auto">
+                  <input
+                    type="password"
+                    id="inputPassword6"
+                    className="form-control"
+                    aria-describedby="passwordHelpInline"
+                  />
+                </div>
+
+                <div className="col-auto">
+                  <input
+                    className="btn btn-primary"
+                    type="submit"
+                    value="Submit"
+                    onClick={() => setIpActive("not active")}
                   />
                 </div>
               </div>
